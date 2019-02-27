@@ -12,7 +12,7 @@ public class Knight extends Pieces implements Player
     }
 
     @Override
-    public void move() {
+    public void move(int x, int y) {
 
     }
 }

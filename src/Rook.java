@@ -1,28 +1,46 @@
-public class Rook extends Pieces implements MoveStraight, Player
+public class Rook extends Pieces implements MoveStraight
 {
     private int player;
+    private int x,y;
+    private int next_x, next_y;
+    private boolean check = false;
 
-    @Override
-    public int player() {
-        return 0;
-    }
-
-    public Rook(int player) {
+    public Rook(int player, int x, int y) {
         this.player = player;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
-    public void move() {
-
+    public void move(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override
-    public void move_horizontal() {
-
+    public void move_straight()
+    {
+        if(((x-next_x)==Math.abs(1)) && ((y-next_y)==0))
+        {
+            this.check = true;
+        }
+        else if(((y-next_y)==Math.abs(1)) && ((x-next_x)==0))
+        {
+            this.check = true;
+        }
+        else
+        {
+            this.check = false;
+        }
     }
 
     @Override
-    public void move_vertical() {
+    public boolean validate_move()
+    {
+        return check;
+    }
 
+    public int getPlayer() {
+        return player;
     }
 }

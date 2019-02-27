@@ -1,4 +1,4 @@
-public class Pawn extends Pieces implements Player
+public class Pawn extends Pieces implements MoveStraight, MoveDiagonal
 {
     private int player;
 
@@ -12,7 +12,7 @@ public class Pawn extends Pieces implements Player
     }
 
     @Override
-    public void move()
+    public void move(int x, int y)
     {
 
     }
