@@ -40,6 +40,11 @@ public class Knight extends Pieces
     @Override
     public boolean validate_move()
     {
+        if(check == true)
+        {
+            x = next_x;
+            y = next_y;
+        }
         return check;
     }
 

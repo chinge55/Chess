@@ -47,11 +47,23 @@ public class Pawn extends Pieces implements MoveStraight, MoveDiagonal
     {
         this.next_x = x;
         this.next_y = y;
+        move_straight();
 
     }
 
     @Override
-    public boolean validate_move() {
+    public boolean validate_move()
+    {
+        if(check == true)
+        {
+            x = next_x;
+            y = next_y;
+        }
         return check;
+    }
+
+    @Override
+    public int getPlayer() {
+        return player;
     }
 }

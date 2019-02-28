@@ -45,6 +45,11 @@ public class Rook extends Pieces implements MoveStraight
     @Override
     public boolean validate_move()
     {
+        if(check == true)
+        {
+            x = next_x;
+            y = next_y;
+        }
         return check;
     }
 

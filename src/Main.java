@@ -11,6 +11,18 @@ public class Main
         putthings();
         // Specify which piece you want to move and where
         showboard();
+        pieces[6][2].move(5,2);
+        if(pieces[6][2].validate_move()==true)
+        {
+            // now I need to check for any conflict before this code
+            if(checkconflict(6,2,5,2)==true)
+            {
+                pieces[5][2]=pieces[6][2];
+                pieces[6][2]=null;
+                showboard();
+            }
+        }
+
     }
     static private void putthings()
     {
@@ -58,5 +70,19 @@ public class Main
             }
             System.out.println("");
         }
+    }
+    static private boolean checkconflict(int x, int y, int next_x, int next_y)
+    {
+        if(pieces[next_x][next_y]!=null)
+        {
+            if(pieces[x][y].getPlayer()==pieces[x][y].getPlayer())
+            {
+                System.out.println("What are you doing?");
+                return false;
+            }
+            else
+                return true;
+        }
+        return true;
     }
 }

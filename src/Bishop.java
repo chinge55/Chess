@@ -37,6 +37,11 @@ public class Bishop extends Pieces implements MoveDiagonal
     @Override
     public boolean validate_move()
     {
+        if(check == true)
+        {
+            x = next_x;
+            y = next_y;
+        }
         return check;
     }
 

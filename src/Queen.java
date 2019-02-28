@@ -66,7 +66,13 @@ public class Queen extends Pieces implements MoveStraight, MoveDiagonal
     // the validate move has to be called everytime
     // i.e if you have to move from 2,0 to 2,5 then it should be called for 2,1.. 2,2.. & all
     @Override
-    public boolean validate_move() {
+    public boolean validate_move()
+    {
+        if(check == true)
+        {
+            x = next_x;
+            y = next_y;
+        }
         return check;
     }
 
