@@ -13,6 +13,16 @@ public class Pawn extends Pieces implements MoveStraight, MoveDiagonal
     }
 
     @Override
+    public String getName() {
+        String str;
+        str = "  Pawn  ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+
+    }
+
+    @Override
     public void move_diagonal()
     {
         // this has to be called only if there is conflict and not on anything else

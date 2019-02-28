@@ -11,6 +11,14 @@ public class King extends Pieces implements MoveStraight, MoveDiagonal
         this.y = y;
     }
 
+    @Override
+    public String getName() {
+        String str;
+        str = "  King  ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+    }
 
     // this function overridden from pieces has to be used to check for the checkmates, kills, respawns etc...
     // everything has to be called from move

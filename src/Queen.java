@@ -26,6 +26,14 @@ public class Queen extends Pieces implements MoveStraight, MoveDiagonal
         move_straight();
         move_diagonal();
     }
+    @Override
+    public String getName() {
+        String str;
+        str = " Queen  ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+    }
 
     @Override
     public void move_straight()

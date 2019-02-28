@@ -10,6 +10,7 @@ public class Main
     {
         putthings();
         // Specify which piece you want to move and where
+        showboard();
     }
     static private void putthings()
     {
@@ -39,5 +40,23 @@ public class Main
             pieces[6][i] = new Pawn(2,6,i);
         }
 
+    }
+    static private void showboard()
+    {
+        for(int i=0; i<8; i++)
+        {
+            for(int j=0; j<8; j++)
+            {
+                if(pieces[i][j]==null)
+                {
+                    System.out.print("  ----  ");
+                }
+                else
+                {
+                    System.out.print(pieces[i][j].getName());
+                }
+            }
+            System.out.println("");
+        }
     }
 }

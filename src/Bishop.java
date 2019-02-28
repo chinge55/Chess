@@ -25,6 +25,14 @@ public class Bishop extends Pieces implements MoveDiagonal
             this.check = true;
         }
     }
+    @Override
+    public String getName() {
+        String str;
+        str = " Bishop ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+    }
 
     @Override
     public boolean validate_move()

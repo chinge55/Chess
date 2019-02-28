@@ -33,6 +33,14 @@ public class Rook extends Pieces implements MoveStraight
             this.check = false;
         }
     }
+    @Override
+    public String getName() {
+        String str;
+        str = "  Rook  ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+    }
 
     @Override
     public boolean validate_move()

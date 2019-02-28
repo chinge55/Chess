@@ -29,6 +29,15 @@ public class Knight extends Pieces
     }
 
     @Override
+    public String getName() {
+        String str;
+        str = " Knight ";
+        if(player ==1)
+            str = str.toUpperCase();
+        return str;
+    }
+
+    @Override
     public boolean validate_move()
     {
         return check;
