@@ -2,20 +2,23 @@
 // when calling the other pieces, create an infinite loop and end if the coordinates match or if the loop is broken by an
 // error..
 //
-
+/*
+For the checkmate, you can call checkconflict for the king of both the kings, and if there is conflict, and the conflict
+is caused by the other team piece, then we can say... Checkmate
+ */
 public class Main
 {
-    public static Pieces[][] pieces = new Pieces[8][8];
+    private static Pieces[][] pieces = new Pieces[8][8];
     public static void main(String[] args)
     {
         putthings();
         // Specify which piece you want to move and where
         showboard();
         pieces[6][2].move(5,2);
-        if(pieces[6][2].validate_move()==true)
+        if(pieces[6][2].validate_move())
         {
-            // now I need to check for any conflict before this code
-            if(checkconflict(6,2,5,2)==true)
+            // before checking conflict, checkmate has to be checked
+            if(checkconflict(6,2,5,2))
             {
                 pieces[5][2]=pieces[6][2];
                 pieces[6][2]=null;

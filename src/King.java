@@ -68,7 +68,7 @@ public class King extends Pieces implements MoveStraight, MoveDiagonal
     @Override
     public boolean validate_move()
     {
-        if(check == true)
+        if(check)
         {
             x = next_x;
             y = next_y;
